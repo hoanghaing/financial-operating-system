@@ -1,6 +1,6 @@
 <template>
   <div class="tabs-section full-width">
-    <div class="tab-headers">
+    <div class="tab-headers q-mb-md">
       <button
         v-for="(tab, index) in tabs"
         :key="index"
@@ -10,7 +10,7 @@
         {{ tab.label }}
       </button>
     </div>
-    <div class="tab-content col overflow-auto shadow-up-4 q-mt-md">
+    <div class="tab-content window-height">
       <slot :name="tabs[activeIndex]?.slotName" />
     </div>
   </div>
@@ -34,7 +34,7 @@ onMounted(() => {});
 
 <style scoped>
 .tabs-section {
-  border-bottom: 2px solid #ddd;
+  flex: 1;
 }
 
 .tab-headers {
@@ -59,5 +59,12 @@ onMounted(() => {});
 }
 
 .tab-content {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0); /* fully transparent */
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1); /* add color if needed */
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  opacity: 1;
 }
 </style>

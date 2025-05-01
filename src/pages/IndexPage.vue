@@ -4,15 +4,18 @@
     <tabs-section
       class="fit"
       :tabs="[
-        { label: 'My debit cards', slotName: 'my' },
-        { label: 'All company cards', slotName: 'company' },
+        { label: 'My debit cards', slotName: 'mycards' },
+        { label: 'All company cards', slotName: 'allcards' },
       ]"
     >
-      <template #my>
-        <div>🟢 Content for My Debit Cards</div>
+      <template #mycards>
+        <div>
+          <my-debit-cards />
+          <!-- 🟢 Content for My Debit Cards -->
+        </div>
       </template>
 
-      <template #company>
+      <template #allcards>
         <div>🏢 Content for All Company Cards</div>
       </template>
     </tabs-section>
@@ -24,4 +27,5 @@
 // import type { Todo, Meta } from 'components/models';
 import HeaderSection from "src/components/HeaderSection.vue";
 import TabsSection from "src/components/TabsSection.vue";
+import MyDebitCards from "src/components/MyDebitCards.vue";
 </script>
