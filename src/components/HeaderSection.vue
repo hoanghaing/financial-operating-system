@@ -30,7 +30,7 @@ const onNewCardClick = () => {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .header-section {
   display: flex;
   justify-content: space-between;
@@ -39,7 +39,7 @@ const onNewCardClick = () => {
 
 .balance-info .label {
   font-size: 0.875rem;
-  color: #222222;
+  color: $text-black;
 }
 
 .amount {
@@ -49,7 +49,7 @@ const onNewCardClick = () => {
 }
 
 .currency {
-  background-color: #01d167;
+  background-color: $text-green;
   color: $white;
   border-radius: 4px;
   margin-right: 0.25rem;

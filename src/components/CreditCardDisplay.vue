@@ -1,7 +1,7 @@
 <template>
   <div class="credit-card-display">
     <div
-      class="credit-card-display__toggle-card-info row float-right"
+      class="credit-card-display__toggle-card-info row float-right q-mb-sm"
       @click.stop="toggleInfo"
     >
       <img src="src/assets/icons/remove_red_eye.svg" />

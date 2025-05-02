@@ -32,7 +32,7 @@ const activeIndex = ref(0);
 onMounted(() => {});
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .tabs-section {
   flex: 1;
 }
@@ -53,7 +53,7 @@ onMounted(() => {});
 }
 
 .tab-headers button.active {
-  color: #222222;
+  color: $text-black;
   border-bottom-color: #23cefd;
   font-weight: 600;
 }
