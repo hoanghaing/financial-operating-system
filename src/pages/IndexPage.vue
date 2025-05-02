@@ -11,7 +11,6 @@
       <template #mycards>
         <div>
           <my-debit-cards />
-          <!-- 🟢 Content for My Debit Cards -->
         </div>
       </template>
 

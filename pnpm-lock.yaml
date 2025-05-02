@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource/open-sans':
+    specifier: ^5.2.5
+    version: 5.2.5
+  '@primeuix/themes':
+    specifier: ^1.0.3
+    version: 1.0.3
   '@quasar/extras':
     specifier: ^1.16.4
     version: 1.16.17
@@ -14,6 +20,9 @@ dependencies:
   pinia:
     specifier: ^3.0.1
     version: 3.0.2(typescript@5.5.4)(vue@3.5.13)
+  primevue:
+    specifier: ^4.3.3
+    version: 4.3.3(vue@3.5.13)
   quasar:
     specifier: ^2.16.0
     version: 2.18.1
@@ -413,6 +422,10 @@ packages:
       levn: 0.4.1
     dev: true
 
+  /@fontsource/open-sans@5.2.5:
+    resolution: {integrity: sha512-f0Ww6H+LB6GXA8UCgqs90h4djVttu3quH/1+wkfUY8b09mG1ESn4ACRBHYY78bsoeDXpaCyZh7eoGROBWplvAQ==}
+    dev: false
+
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -526,6 +539,51 @@ packages:
     resolution: {integrity: sha512-ROFF39F6ZrnzSUEmQQZUar0Jt4xVoP9WnDRdWwF4NNcXs3xBTLgBUDoOwW141y1jP+S8nahIbdxbFC7IShw9Iw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
+
+  /@primeuix/styled@0.5.1:
+    resolution: {integrity: sha512-5Ftw/KSauDPClQ8F2qCyCUF7cIUEY4yLNikf0rKV7Vsb8zGYNK0dahQe7CChaR6M2Kn+NA2DSBSk76ZXqj6Uog==}
+    engines: {node: '>=12.11.0'}
+    dependencies:
+      '@primeuix/utils': 0.5.3
+    dev: false
+
+  /@primeuix/styles@1.0.3:
+    resolution: {integrity: sha512-yHj/Q+fosJ1736Ty5lRbpqhKa9piou+xZPPppNHUDshq0+XhrFwDGggvPGmDAJyUIM+ChM/Nj8lPY/AwTNXAkg==}
+    dependencies:
+      '@primeuix/styled': 0.5.1
+    dev: false
+
+  /@primeuix/themes@1.0.3:
+    resolution: {integrity: sha512-f/1qadrv5TFMHfvtVv4Y9zjrkeDP2BO/cuzbHBO9DYxKL6YBIPT9BjKec2K4Kg8PcfGm6CAvxAvICadJSWejRw==}
+    dependencies:
+      '@primeuix/styled': 0.5.1
+    dev: false
+
+  /@primeuix/utils@0.5.3:
+    resolution: {integrity: sha512-7SGh7734wcF1/uK6RzO6Z6CBjGQ97GDHfpyl2F1G/c7R0z9hkT/V72ypDo82AWcCS7Ta07oIjDpOCTkSVZuEGQ==}
+    engines: {node: '>=12.11.0'}
+    dev: false
+
+  /@primevue/core@4.3.3(vue@3.5.13):
+    resolution: {integrity: sha512-kSkN5oourG7eueoFPIqiNX3oDT/f0I5IRK3uOY/ytz+VzTZp5yuaCN0Nt42ZQpVXjDxMxDvUhIdaXVrjr58NhQ==}
+    engines: {node: '>=12.11.0'}
+    peerDependencies:
+      vue: ^3.5.0
+    dependencies:
+      '@primeuix/styled': 0.5.1
+      '@primeuix/utils': 0.5.3
+      vue: 3.5.13(typescript@5.5.4)
+    dev: false
+
+  /@primevue/icons@4.3.3(vue@3.5.13):
+    resolution: {integrity: sha512-ouQaxHyeFB6MSfEGGbjaK5Qv9efS1xZGetZoU5jcPm090MSYLFtroP1CuK3lZZAQals06TZ6T6qcoNukSHpK5w==}
+    engines: {node: '>=12.11.0'}
+    dependencies:
+      '@primeuix/utils': 0.5.3
+      '@primevue/core': 4.3.3(vue@3.5.13)
+    transitivePeerDependencies:
+      - vue
+    dev: false
 
   /@quasar/app-vite@2.2.0(@types/node@20.17.30)(eslint@9.24.0)(pinia@3.0.2)(quasar@2.18.1)(typescript@5.5.4)(vue-router@4.5.0)(vue@3.5.13):
     resolution: {integrity: sha512-MvCfJrCbxUYvoGaK5jPq0h0hjO8mbxYOWngf+dIKrxhwb+1h5ERh6aVYEUuCtMIwTMEVfPkCez4DIfZIoReuDw==}
@@ -3174,6 +3232,19 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dev: true
+
+  /primevue@4.3.3(vue@3.5.13):
+    resolution: {integrity: sha512-nooYVoEz5CdP3EhUkD6c3qTdRmpLHZh75fBynkUkl46K8y5rksHTjdSISiDijwTA5STQIOkyqLb+RM+HQ6nC1Q==}
+    engines: {node: '>=12.11.0'}
+    dependencies:
+      '@primeuix/styled': 0.5.1
+      '@primeuix/styles': 1.0.3
+      '@primeuix/utils': 0.5.3
+      '@primevue/core': 4.3.3(vue@3.5.13)
+      '@primevue/icons': 4.3.3(vue@3.5.13)
+    transitivePeerDependencies:
+      - vue
+    dev: false
 
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}

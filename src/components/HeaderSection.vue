@@ -50,7 +50,7 @@ const onNewCardClick = () => {
 
 .currency {
   background-color: #01d167;
-  color: #ffffff;
+  color: $white;
   border-radius: 4px;
   margin-right: 0.25rem;
   font-size: 13px;

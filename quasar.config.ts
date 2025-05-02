@@ -14,6 +14,9 @@ export default defineConfig((/* ctx */) => {
     css: [
       'app.scss'
     ],
+    cssAddon: [
+      'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap'
+    ],
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       'mdi-v7',

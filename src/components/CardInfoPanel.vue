@@ -1,6 +1,5 @@
 <template>
   <div class="card-info-panel">
-    Card Info Panel
     <credit-card-display />
     <card-action-buttons />
   </div>
@@ -9,4 +8,8 @@
 import CreditCardDisplay from "./CreditCardDisplay.vue";
 import CardActionButtons from "./CardActionButtons.vue";
 </script>
-<style scoped></style>
+<style scoped lang="scss">
+.card-info-panel {
+  max-width: 416px;
+}
+</style>
