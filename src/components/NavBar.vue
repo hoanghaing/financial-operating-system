@@ -1,12 +1,9 @@
 <template>
   <q-drawer show-if-above bordered class="navbar" :width="340">
     <div class="drawer-content column">
-      <!-- Logo -->
       <div class="logo">
         <img src="src\assets\logos\logo.svg" alt="Logo" class="logo" />
       </div>
-
-      <!-- Subtitle -->
       <div class="subtitle">
         Trusted way of banking for 3,000+ SMEs and startups in Singapore
       </div>

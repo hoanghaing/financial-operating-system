@@ -70,5 +70,8 @@ const onNewCardClick = () => {
   border-radius: 4px;
   padding: 10px 12px;
   cursor: pointer;
+  &:hover {
+    background-color: #608be0;
+  }
 }
 </style>

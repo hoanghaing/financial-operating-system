@@ -40,16 +40,18 @@ onMounted(() => {});
 .tab-headers {
   display: flex;
   gap: 1rem;
-}
-
-.tab-headers button {
-  background: none;
-  border: none;
-  padding: 0.25rem 0;
-  cursor: pointer;
-  color: #2222224d;
-  font-size: 14px;
-  border-bottom: 2px solid transparent;
+  button {
+    background: none;
+    border: none;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    color: #2222224d;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: #23cefd;
+    }
+  }
 }
 
 .tab-headers button.active {

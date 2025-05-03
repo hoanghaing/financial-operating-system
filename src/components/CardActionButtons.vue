@@ -47,7 +47,13 @@
   line-height: 14px;
 }
 .card-action-item {
+  cursor: pointer;
+  padding: 4px 0px;
+  border-radius: 8px;
   max-width: 60px;
   text-align: center;
+  &:hover {
+    background-color: #c1d3f7ed;
+  }
 }
 </style>
