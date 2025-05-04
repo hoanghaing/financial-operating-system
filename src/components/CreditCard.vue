@@ -104,7 +104,6 @@ defineProps<{
   align-items: center;
 }
 .dotdotdot {
-  // word-spacing: 0.25rem;
 }
 .asterisk {
   font-size: 1.5rem;

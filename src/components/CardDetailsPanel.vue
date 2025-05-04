@@ -1,30 +1,12 @@
 <template>
   <div class="card-detail-panel q-pa-md">
-    <base-accordion
-      title="Card details"
-      icon-url="src/assets/icons/card-2.svg"
-      :has-footer="false"
-    >
-      <template #content> Card Details Expand Section </template>
-      <template #footer> </template>
-    </base-accordion>
-    <base-accordion
-      title="Recent Transactions"
-      icon-url="src/assets/icons/transactions.svg"
-      :has-footer="true"
-    >
-      <template #content>
-        <transaction-item v-for="(item, index) in items" :key="index" v-bind="item" />
-      </template>
-      <template #footer>
-        <div class="view-all-transactions">View all card transactions</div>
-      </template>
-    </base-accordion>
+    <card-details-section />
+    <recent-transactions-section :items="items" />
   </div>
 </template>
 <script setup lang="ts">
-import BaseAccordion from "./BaseAccordion.vue";
-import TransactionItem from "./TransactionItem.vue";
+import CardDetailsSection from "./CardDetailsSection.vue";
+import RecentTransactionsSection from "./RecentTransactionsSection.vue";
 
 const items = [
   {
@@ -87,14 +69,5 @@ const items = [
     border-radius: 16px;
     color: red !important;
   }
-}
-
-.view-all-transactions {
-  cursor: pointer;
-  color: #01d167;
-  text-align: center;
-  padding: 16px 0px;
-  font-size: 13px;
-  font-weight: 600;
 }
 </style>

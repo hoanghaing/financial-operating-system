@@ -2,7 +2,7 @@
   <div class="accordion border rounded q-mb-md">
     <div
       class="accordion-header row items-center justify-between q-px-md q-py-sm cursor-pointer"
-      @click="isOpen = !isOpen"
+      @click="toggle"
     >
       <div class="row items-center gap-sm">
         <img class="accordion-image-icon" :src="iconUrl" />
@@ -14,7 +14,7 @@
         src="src/assets/icons/down-arrow.svg"
       />
     </div>
-    <div v-show="isOpen" class="accordion-content">
+    <div v-if="isOpen" class="accordion-content">
       <slot name="content" />
       <div v-if="hasFooter" class="accordion-footer">
         <slot name="footer" />
@@ -24,15 +24,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { defineEmits } from "vue";
 
-defineProps<{
+const props = defineProps<{
   title: string;
   iconUrl: string;
   hasFooter: boolean;
+  isOpen: boolean;
+  openSectionName: string;
 }>();
 
-const isOpen = ref(false);
+const emits = defineEmits(["toggle"]);
+
+const toggle = () => {
+  emits("toggle", props.openSectionName);
+};
 </script>
 
 <style scoped lang="scss">
@@ -61,7 +67,9 @@ const isOpen = ref(false);
   line-height: 18px;
 }
 .accordion-content {
+  min-height: 4rem;
 }
+
 .accordion-image-icon {
   transition: transform 0.3s ease;
 }

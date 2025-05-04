@@ -63,8 +63,8 @@ onMounted(() => {});
 .tab-content {
   padding: 2rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0); /* fully transparent */
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1); /* add color if needed */
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
   stroke-linecap: butt;
   stroke-linejoin: miter;
   opacity: 1;

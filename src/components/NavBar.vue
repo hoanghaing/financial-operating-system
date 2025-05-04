@@ -8,7 +8,6 @@
         Trusted way of banking for 3,000+ SMEs and startups in Singapore
       </div>
 
-      <!-- Navigation -->
       <div class="nav-list column">
         <q-item
           v-for="item in navItems"
@@ -41,27 +40,27 @@ const navItems: navItemLinkProps[] = [
   {
     label: "Home",
     icon: "src/assets/icons/home.svg",
-    to: "",
+    to: "/",
   },
   {
     label: "Cards",
     icon: "src/assets/icons/card.svg",
-    to: "",
+    to: "/cards",
   },
   {
     label: "Payments",
     icon: "src/assets/icons/payments.svg",
-    to: "",
+    to: "/payments",
   },
   {
     label: "Credit",
     icon: "src/assets/icons/credit.svg",
-    to: "",
+    to: "/credit",
   },
   {
     label: "Settings",
     icon: "src/assets/icons/account.svg",
-    to: "",
+    to: "/settings",
   },
 ];
 </script>
