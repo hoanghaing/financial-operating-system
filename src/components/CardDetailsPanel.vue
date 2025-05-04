@@ -1,5 +1,5 @@
 <template>
-  <div class="card-detail-panel q-pa-md">
+  <div class="card-detail-panel q-pa-md q-hidden-lg">
     <card-details-section />
     <recent-transactions-section :items="items" />
   </div>

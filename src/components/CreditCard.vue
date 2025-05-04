@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="{ 'frozen-card': card.isFrozen }">
     <div class="card--logo__header full-width q-ml-auto">
       <img
         class="float-right"
@@ -11,7 +11,7 @@
       <div class="card-owner">{{ card.owner }}</div>
       <div class="card-number row">
         <div class="card-number-no">
-          <span v-if="isHideInfomation" class="dotdotdot">●●●● ●●●● ●●●●</span>
+          <span v-if="isHideInformation" class="dotdotdot">●●●● ●●●● ●●●●</span>
           <span v-else>
             {{ card.no }}
           </span>
@@ -21,7 +21,7 @@
       <div class="card-validation row">
         <div class="valid-through">Thru: {{ card.validDate }}</div>
         <div class="cvv-num row">
-          CVV: <span v-if="isHideInfomation" class="asterisk q-ml-xs">***</span
+          CVV: <span v-if="isHideInformation" class="asterisk q-ml-xs">***</span
           ><span v-else>{{ card.cvv }}</span>
         </div>
       </div>
@@ -34,15 +34,11 @@
 
 <script setup lang="ts">
 import { defineProps } from "vue";
+import type { Card } from "../models/credit-card";
+
 defineProps<{
-  card: {
-    owner: string;
-    no: string;
-    year: number;
-    validDate: string;
-    cvv: string;
-  };
-  isHideInfomation?: boolean;
+  card: Card;
+  isHideInformation?: boolean;
 }>();
 </script>
 <style lang="scss" scoped>
@@ -55,6 +51,10 @@ defineProps<{
   top: 0px;
   padding: 27px;
   cursor: default;
+  &.frozen-card {
+    opacity: 0.2;
+    background: $credit-card-gray;
+  }
 }
 .card__info {
   margin-top: 27px;

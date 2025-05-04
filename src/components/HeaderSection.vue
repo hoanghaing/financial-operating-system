@@ -11,22 +11,22 @@
       <img src="src/assets/icons/box.svg" alt="icon" class="new-card-btn__icon q-mr-sm" />
       <span class="new-card-btn__title"> New card </span>
     </button>
+    <add-new-card-modal v-model="isModalOpen" @onCloseModal="isModalOpen = false" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits } from "vue";
+import { storeToRefs } from "pinia";
+import { ref } from "vue";
+import { useBalanceStore } from "../stores/useBalanceStore";
+import AddNewCardModal from "./AddNewCardModal.vue";
 
-defineProps<{
-  balance: number;
-}>();
-
-const emit = defineEmits<{
-  (e: "new-card-click"): void;
-}>();
+const balanceStore = useBalanceStore();
+const { balance } = storeToRefs(balanceStore);
+const isModalOpen = ref(false);
 
 const onNewCardClick = () => {
-  emit("new-card-click");
+  isModalOpen.value = true;
 };
 </script>
 

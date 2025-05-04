@@ -1,6 +1,6 @@
 <template>
   <q-page class="column items-center q-pt-xl q-pl-xl q-pr-xl q-gutter-md">
-    <header-section :balance="3000" />
+    <header-section />
     <tabs-section
       class="fit"
       :tabs="[

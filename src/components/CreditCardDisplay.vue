@@ -6,7 +6,7 @@
     >
       <img src="src/assets/icons/remove_red_eye.svg" />
       <div class="q-ml-xs credit-card-display__toggle-card-text">
-        <span v-if="hideInfomation">Show </span><span v-else>Hide </span> card number
+        <span v-if="isHideInformation">Show </span><span v-else>Hide </span> card number
       </div>
     </div>
     <q-carousel
@@ -16,48 +16,38 @@
       class="custom-carousel-cards"
       control-color="green-4"
     >
-      <q-carousel-slide name="style" class="column no-wrap flex-center">
-        <credit-card :card="card" :is-hide-infomation="hideInfomation" />
-      </q-carousel-slide>
-      <q-carousel-slide name="style1" class="column no-wrap flex-center">
-        <credit-card :card="card2" :is-hide-infomation="hideInfomation" />
-      </q-carousel-slide>
-      <q-carousel-slide name="style2" class="column no-wrap flex-center">
-        <credit-card :card="card3" :is-hide-infomation="hideInfomation" />
+      <q-carousel-slide
+        v-for="(card, index) in cards"
+        :key="index"
+        :name="'style' + index"
+        class="column no-wrap flex-center"
+      >
+        <credit-card :card="card" :is-hide-information="isHideInformation" />
       </q-carousel-slide>
     </q-carousel>
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
+import { useCardStore } from "../stores/useCardStore";
+import { storeToRefs } from "pinia";
 import CreditCard from "./CreditCard.vue";
-const slide = ref("style");
-const hideInfomation = ref(true);
-const card = {
-  owner: "Mark Henry",
-  no: "1234 5678 9999",
-  year: 2020,
-  validDate: "12/26",
-  cvv: "933",
-};
-const card2 = {
-  owner: "Mark Henry 2",
-  no: "1234 5678 9999",
-  year: 2020,
-  validDate: "12/26",
-  cvv: "933",
-};
-const card3 = {
-  owner: "Mark Henry 3",
-  no: "1234 5678 9999",
-  year: 2020,
-  validDate: "12/26",
-  cvv: "933",
-};
+const slide = ref("style0");
+const isHideInformation = ref(true);
+
+const cardStore = useCardStore();
+const { cards } = storeToRefs(cardStore);
 
 const toggleInfo = () => {
-  hideInfomation.value = !hideInfomation.value;
+  isHideInformation.value = !isHideInformation.value;
 };
+onMounted(() => {
+  cardStore.setActiveCard(0);
+});
+watch(slide, (newSlide) => {
+  const index = parseInt(newSlide.replace("style", ""), 10);
+  cardStore.setActiveCard(index);
+});
 </script>
 <style scoped lang="scss">
 .custom-carousel-cards {

@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const { type } = defineProps<{
+const { type, from, date, refundText, amount, isPositive } = defineProps<{
   type?: string;
   from?: string;
   date?: string;
