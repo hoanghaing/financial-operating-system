@@ -62,7 +62,7 @@ const onNewCardClick = () => {
 .new-card-btn {
   display: flex;
   justify-content: center;
-  background-color: #325baf;
+  background-color: $classic-blue;
   color: white;
   font-size: 13px;
   font-weight: bold;

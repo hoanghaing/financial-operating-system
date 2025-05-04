@@ -60,12 +60,12 @@ const items = [
   &:hover {
     border-radius: 8px;
   }
-  background-color: #f5f9ff;
+  background-color: $accordion-header;
   .q-item-type {
     border-radius: 8px;
   }
   .q-icon {
-    background: #325baf;
+    background: $classic-blue;
     border-radius: 16px;
     color: red !important;
   }

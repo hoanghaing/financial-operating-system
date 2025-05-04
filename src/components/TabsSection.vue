@@ -49,14 +49,14 @@ onMounted(() => {});
     font-size: 14px;
     border-bottom: 2px solid transparent;
     &:hover {
-      color: #23cefd;
+      color: $tab-section-blue;
     }
   }
 }
 
 .tab-headers button.active {
   color: $text-black;
-  border-bottom-color: #23cefd;
+  border-bottom-color: $tab-section-blue;
   font-weight: 600;
 }
 

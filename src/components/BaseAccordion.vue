@@ -44,7 +44,7 @@ const toggle = () => {
 <style scoped lang="scss">
 .accordion {
   transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
+  border: 1px solid $white-3;
   border-radius: 8px;
   min-width: 366px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* adjust as needed */
@@ -53,7 +53,7 @@ const toggle = () => {
   opacity: 1;
 }
 .accordion-header {
-  background: #f5f9ff;
+  background: $accordion-header;
   border-radius: 8px;
   min-height: 72px;
 }

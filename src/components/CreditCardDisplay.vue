@@ -81,19 +81,6 @@ const toggleInfo = () => {
 .q-carousel__control {
   width: 26rem !important;
 }
-// .q-btn__content {
-// background: #01d167;
-// border-radius: 20px;
-// }
-// .q-btn__content .q-icon {
-//   all: unset !important;
-// }
-// .q-carousel__control {
-//   all: unset !important;
-//   position: relative !important;
-//   top: -35px !important;
-//   background-color: red !important;
-// }
 .credit-card-display__toggle-card-info {
   cursor: pointer;
 }
